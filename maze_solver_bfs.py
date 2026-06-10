@@ -44,7 +44,7 @@ def solve_bfs(maze):
                     queue.append((nr, nc))
     return False
 
-if name == "main":
+if __name__ == "__main__":
     try:
         width = int(input("Enter maze width for BFS: "))
         height = int(input("Enter maze height for BFS: "))

@@ -1,24 +1,24 @@
 import unittest
-from maze_solver_dfs import solve_dfs
+from maze_solver_bfs import solve_bfs
 
-class TestDFSSolving(unittest.TestCase):
+class TestBFSSolving(unittest.TestCase):
     def setUp(self):
         self.solvable = [
-            ["#", "S", "#"],
-            ["#", ".", "#"],
-            ["#", ".", "E"]
+            ["#", "S", "."],
+            ["#", "#", "."],
+            ["#", "#", "E"]
         ]
         self.unsolvable = [
-            ["#", "S", "#"],
+            ["#", "S", "."],
             ["#", "#", "#"],
-            ["#", ".", "E"]
+            ["#", "#", "E"]
         ]
 
-    def test_dfs_success(self):
-        self.assertTrue(solve_dfs(self.solvable))
+    def test_bfs_success(self):
+        self.assertTrue(solve_bfs(self.solvable))
 
-    def test_dfs_fail(self):
-        self.assertFalse(solve_dfs(self.unsolvable))
+    def test_bfs_fail(self):
+        self.assertFalse(solve_bfs(self.unsolvable))
 
-if name == "main":
+if __name__ == "__main__":
     unittest.main()
